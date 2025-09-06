@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Project Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was built using **React, Vite, Tailwind CSS, SVGR, and TypeScript**. The combination of these tools provides a modern development workflow, clean styling, and a scalable, maintainable codebase.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Choices & Why
 
-## Expanding the ESLint configuration
+- **React + Vite**  
+  Vite gives a super fast dev server and build process compared to older setups like CRA or Webpack. Combined with React, it provides a modern and efficient environment with hot reloading and easy project structure.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Tailwind CSS**  
+  Utility-first styling keeps components consistent and responsive without writing long custom CSS files. It also speeds up prototyping while maintaining a design system.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **SVGR**  
+  Used to import SVG files directly as React components. This allows icons and graphics to be styled and reused easily with props or Tailwind classes, instead of treating them only as static assets.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **TypeScript**  
+  Adds type safety, catches errors early, and makes the project easier to scale and maintain. It also improves the developer experience with autocomplete and inline documentation.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+
+   ```bash
+   git clone <repo-url>
+   cd <project-folder>
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+
+   ```bash
+   npm run build
+   ```
+
+5. Preview the build:
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── assets/        # SVGs, images
+ ├── components/    # Reusable React components
+ ├── App.tsx        # Main app entry
+ ├── main.tsx       # Vite + React entry
+ └── index.css      # Tailwind styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚡ Notes
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- SVGs under `src/assets` can be imported either as React components (via SVGR) or as image URLs depending on size and usage.
+- Tailwind config can be extended for custom colors, spacing, and typography.
+- TypeScript ensures safer props, state, and component reuse.
