@@ -302,7 +302,7 @@ const ProductView: React.FC<ProductPageProps> = () => {
                     <img
                         src={oneImage}
                         alt="Main product view"
-                        className="w-full max-w-[454px] h-auto max-h-[600px] object-contain rounded-lg"
+                        className="w-full max-w-[454px] h-auto max-h-[600px] object-contain"
                     />
                 </div>
             </div>
