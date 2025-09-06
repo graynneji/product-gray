@@ -1,23 +1,15 @@
+
 import React, { useState } from 'react';
-// import ProductImage from "../assets/product image.svg?react"
-// import ProfileCustomer from "../assets/_Avatar Image.svg?react"
-// import ProductForView from "../assets/_Avatar Image(1).svg?react"
-// import ArrowRight from "../assets/Vector.svg?react"
-// import ArrowLeft from "../assets/Vector(1).svg?react"
-// import ShirtProd from "../assets/shirt_white 2.svg?react"
-// import Black from "../assets/black.svg?react"
-// import White from "../assets/White.svg?react"
-import { lazy } from 'react';
 
-const ProductImage = lazy(() => import("../assets/product image.svg?react"));
-const ProfileCustomer = lazy(() => import("../assets/_Avatar Image.svg?react"));
-const ProductForView = lazy(() => import("../assets/_Avatar Image(1).svg?react"));
-const ArrowRight = lazy(() => import("../assets/Vector.svg?react"));
-const ArrowLeft = lazy(() => import("../assets/Vector(1).svg?react"));
-const ShirtProd = lazy(() => import("../assets/shirt_white 2.svg?react"));
-const Black = lazy(() => import("../assets/black.svg?react"));
-const White = lazy(() => import("../assets/White.svg?react"));
-
+// Import SVG files as static assets
+import ProductImageSrc from "../assets/product image.svg";
+import ProfileCustomerSrc from "../assets/_Avatar Image.svg";
+import ProductForViewSrc from "../assets/_Avatar Image(1).svg";
+import ArrowRightSrc from "../assets/Vector.svg";
+import ArrowLeftSrc from "../assets/Vector(1).svg";
+import ShirtProdSrc from "../assets/shirt_white 2.svg";
+import BlackSrc from "../assets/black.svg";
+import WhiteSrc from "../assets/White.svg";
 
 const CustomerReviews: React.FC = () => {
     const [currentReview, _setCurrentReview] = useState(0);
@@ -43,7 +35,7 @@ const CustomerReviews: React.FC = () => {
             name: "Personalized Photo & Slogan Text T-shirt",
             price: "$24.99",
             discount: "-10%",
-            image: Black,
+            image: BlackSrc,
             colors: ["#ffffff", "#242424", "#25549E", "#C5A174"]
         },
         {
@@ -51,7 +43,7 @@ const CustomerReviews: React.FC = () => {
             name: "Personalized Slogan Text Baseball Cap",
             price: "$19.99",
             discount: "-10%",
-            image: ShirtProd,
+            image: ShirtProdSrc,
             colors: ["#2b6cb0", "#ffffff", "#C5A174"]
         },
         {
@@ -59,7 +51,7 @@ const CustomerReviews: React.FC = () => {
             name: "Personalized Photo & Text Tote Bag",
             price: "$20.99",
             discount: "-10%",
-            image: White,
+            image: WhiteSrc,
             colors: ["#242424", "#ffffff"]
         }
     ];
@@ -94,14 +86,12 @@ const CustomerReviews: React.FC = () => {
                     <p className="text-[#424242] leading-[150%] text-[21px]">What customers have been saying!</p>
                 </div>
 
-
                 <div className="bg-[#fafbfc] flex flex-col gap-8 py-[72px] px-[70px]">
                     <div className="flex gap-20 justify-between  mx-auto">
 
                         <div className="flex flex-col gap-8">
                             <div className="flex items-center gap-4">
-
-                                <ProfileCustomer />
+                                <img src={ProfileCustomerSrc} alt="Customer Profile" />
                                 <div>
                                     <h3 className="font-bold text-primary text-[21px] mb-2">
                                         {reviews[currentReview].name}
@@ -118,13 +108,12 @@ const CustomerReviews: React.FC = () => {
                                 <p className="text-[#424242] leading-[150%] text-[16px]">
                                     {reviews[currentReview].description}
                                 </p>
-
                             </div>
 
                             <div className="">
                                 <p className="text-[#424242] leading-[150%] text-sm mb-4">Purchased item:</p>
                                 <div className="flex items-center gap-3">
-                                    <ProductForView />
+                                    <img src={ProductForViewSrc} alt="Product Preview" />
 
                                     <div>
                                         <p className="text-primary text-[16px] leading-[150%] underline decoration-solid">
@@ -145,13 +134,17 @@ const CustomerReviews: React.FC = () => {
 
                         {/* Right Side - Customer Image */}
                         <div className="flex-shrink-0">
-                            <ProductImage />
+                            <img src={ProductImageSrc} alt="Product Image" />
                         </div>
 
                     </div>
                     <div className='flex justify-center items-center gap-6'>
-                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'><ArrowLeft /></p>
-                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'><ArrowRight /></p>
+                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'>
+                            <img src={ArrowLeftSrc} alt="Previous" />
+                        </p>
+                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'>
+                            <img src={ArrowRightSrc} alt="Next" />
+                        </p>
                     </div>
                 </div>
             </div>
@@ -159,7 +152,6 @@ const CustomerReviews: React.FC = () => {
             {/* Matching Products Section */}
             <div className="px-[71px] py-[72px]">
                 <div className='text-center mb-14 '>
-
                     <h2 className="text-[38px] font font-serif text-primary mb-2">
                         For Head-to-Toe Matching
                     </h2>
@@ -168,19 +160,19 @@ const CustomerReviews: React.FC = () => {
                     </p>
                 </div>
 
-
                 <div className="relative">
                     <div className="flex items-center justify-between gap-[16px]">
                         {/* Left Arrow */}
-                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'><ArrowLeft /></p>
-
+                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'>
+                            <img src={ArrowLeftSrc} alt="Previous" />
+                        </p>
 
                         {/* Products Grid */}
                         <div className="flex gap-[30px]">
                             {products.map((product) => (
                                 <div key={product.id} className="flex gap-6 border border-[#E0E0E0] p-6 rounded-[10px]">
-                                    <div className="relative mb-4">
-                                        <product.image />
+                                    <div className="relative flex">
+                                        <img src={product.image} alt={product.name} className='object-cover' />
 
                                         <span className="absolute top-2 right-0 bg-[#EA3335] text-white text-[14px] leading-[150%] px-1.5 py-[1px] rounded-bl-[6px] rounded-tl-[6px]">
                                             {product.discount}
@@ -209,9 +201,10 @@ const CustomerReviews: React.FC = () => {
                             ))}
                         </div>
 
-
                         {/* Right Arrow */}
-                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'><ArrowRight /></p>
+                        <p className='w-[48px] h-[48px] rounded-[40px] border p-3 border-[#EdEEEE] flex justify-center items-center'>
+                            <img src={ArrowRightSrc} alt="Next" />
+                        </p>
 
                     </div>
                 </div>
@@ -228,4 +221,3 @@ const CustomerReviews: React.FC = () => {
 };
 
 export default CustomerReviews;
-
