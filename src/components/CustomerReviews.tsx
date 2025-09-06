@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import ProductImage from "../assets/product image.svg?react"
-import ProfileCustomer from "../assets/_Avatar Image.svg?react"
-import ProductForView from "../assets/_Avatar Image(1).svg?react"
-import ArrowRight from "../assets/Vector.svg?react"
-import ArrowLeft from "../assets/Vector(1).svg?react"
-import ShirtProd from "../assets/shirt_white 2.svg?react"
-import Black from "../assets/black.svg?react"
-import White from "../assets/White.svg?react"
+// import ProductImage from "../assets/product image.svg?react"
+// import ProfileCustomer from "../assets/_Avatar Image.svg?react"
+// import ProductForView from "../assets/_Avatar Image(1).svg?react"
+// import ArrowRight from "../assets/Vector.svg?react"
+// import ArrowLeft from "../assets/Vector(1).svg?react"
+// import ShirtProd from "../assets/shirt_white 2.svg?react"
+// import Black from "../assets/black.svg?react"
+// import White from "../assets/White.svg?react"
+import { lazy } from 'react';
 
+const ProductImage = lazy(() => import("../assets/product image.svg?react"));
+const ProfileCustomer = lazy(() => import("../assets/_Avatar Image.svg?react"));
+const ProductForView = lazy(() => import("../assets/_Avatar Image(1).svg?react"));
+const ArrowRight = lazy(() => import("../assets/Vector.svg?react"));
+const ArrowLeft = lazy(() => import("../assets/Vector(1).svg?react"));
+const ShirtProd = lazy(() => import("../assets/shirt_white 2.svg?react"));
+const Black = lazy(() => import("../assets/black.svg?react"));
+const White = lazy(() => import("../assets/White.svg?react"));
 
 
 const CustomerReviews: React.FC = () => {
@@ -219,3 +228,4 @@ const CustomerReviews: React.FC = () => {
 };
 
 export default CustomerReviews;
+
