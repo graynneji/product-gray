@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Payment from '../assets/payment.svg?react';
+import Payment from '../assets/Payment.svg?react';
 import { Star, Heart, Gift } from 'lucide-react';
 import One from "../assets/1.svg?react"
 import FrameThumb from "../assets/Frame 1522.png"
